@@ -1,19 +1,23 @@
 
-<header>
-    <h1>Mi agenda</h1>  
-</header>
+<div class="container"> 
 
-<formulario-alta
-(clikEnGuardar)="guardarContacto($event)"
+    <header>
+        <h1>Mi agenda</h1>  
+    </header>
 
-></formulario-alta>
+    <formulario-alta
+    (clikEnGuardar)="guardarContacto($event)"
 
-
-<!-- PAra enlazar datos en un componente hijo basta con indicar el atributo 
-que se ha expuesto en este. si queremos evaliar una expresion previa a su
-asignacion usamos usamos con corchetes el atributo -->
-<lista-contactos [datos] ="contactos"
-(clickEnEliminar)="eliminarContacto($event)" >
+    ></formulario-alta>
 
 
-</lista-contactos>
+    <!-- PAra enlazar datos en un componente hijo basta con indicar el atributo 
+    que se ha expuesto en este. si queremos evaliar una expresion previa a su
+    asignacion usamos usamos con corchetes el atributo -->
+    <lista-contactos [datos] ="contactos"
+    (clickEnEliminar)="eliminarContacto($event)" >
+
+
+    </lista-contactos>
+
+</div>

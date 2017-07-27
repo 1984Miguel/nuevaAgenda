@@ -9,51 +9,79 @@ a la cual asignamos como valor la propia directiva NgForm
   <!-- Para tranajar con elementos de formularios necesitamos usar
   la directiva ngModule mapa referencia a la instancia del "DormControl" del elemento
   asignamos como referencia la vdirectiva ngmodel -->
+  <div class="row">
+    <div class="offset-by-three six columns">
+
   
-  <!-- Nombre -->
-  <label for="nombre">Nombre</label>
-  <input 
-  id="nombre"
-  placeholder="Ej .Richard"
-  type="text"
-  ngModel
-  name="nombre"
-  #nombreRef="ngModel"
-  required>
- 
-<div *ngIf="nombreRef.touched && nombreRef.invalid" class="mensaje-error">
-    el nombre es obligatorio
- </div> 
+          <!-- Nombre -->
+          <label for="nombre">Nombre</label>
+          <input 
+          class="u-full-width"
+          id="nombre"
+          placeholder="Ej .Richard"
+          type="text"
+          ngModel
+          name="nombre"
+          #nombreRef="ngModel"
+          required>
+        
+        <div *ngIf="nombreRef.touched && nombreRef.invalid" class="mensaje-error">
+            el nombre es obligatorio
+        </div> 
 
- <!--Apellido -->
- <label for="apellido">Apellido</label>
-  <input 
-  id="apellido"
-  placeholder="Ej .Stalman"
-  type="text"
-  ngModel
-  name="Apellido" >
- 
-   <!-- Telefono -->
+   </div>
+  </div>
 
-   <label for="telefono"> Telefono</label>
-  <input 
-  id="telefono"
-  placeholder="34567890"
-  type="tel"
-  ngModel
-  name="telefono">
+  <div class="row">
+    <div class="offset-by-three six columns">
+
+        <!--Apellido -->
+        <label for="apellido">Apellido</label>
+          <input 
+          class="u-full-width"
+          id="apellido"
+          placeholder="Ej .Stalman"
+          type="text"
+          ngModel
+          name="Apellido" >
+
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="offset-by-three six columns">
+ 
+        <!-- Telefono -->
+
+        <label for="telefono"> Telefono</label>
+        <input 
+        class="u-full-width"
+        id="telefono"
+        placeholder="34567890"
+        type="tel"
+        ngModel
+        name="telefono">
+
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="offset-by-three six columns">
 
 
    <!-- corremo -->
-   <label for="correo">Correo</label>
-  <input 
-  id="correo"
-  placeholder="stallman@ubuntu.es"
-  type="email"
-  ngModel
-  name="correo"
-  >
+      <label for="correo">Correo</label>
+      <input 
+      class="u-full-width"
+      id="correo"
+      placeholder="stallman@ubuntu.es"
+      type="email"
+      ngModel
+      name="correo"
+      >
+
+    </div>
+  </div>
 
   
 
@@ -69,6 +97,14 @@ a la cual asignamos como valor la propia directiva NgForm
 
 
 <!--  -->
-  <button type="submit" [disabled]="contacto.invalid" >Guardar contacto</button>
+
+<div class="row">
+    <div class="offset-by-three six columns">
+  <button type="submit" [disabled]="contacto.invalid" 
+  class="u-full-width button-primary"
+  >Guardar contacto</button>
+
+    </div>
+</div>  
    
 </form>
