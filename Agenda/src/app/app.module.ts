@@ -1,10 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule  } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 
-import {ContactosService} from "./contactos.service"
+import {ContactosService} from "./contactos.service";
+import { FormularioAltaComponent } from './formulario-alta/formulario-alta.component'
 
 @NgModule({
 
@@ -12,13 +14,15 @@ import {ContactosService} from "./contactos.service"
   // pipes (sinvista asociada) que nosotros creamos
   declarations: [
     AppComponent,
-    ListaContactosComponent
+    ListaContactosComponent,
+    FormularioAltaComponent
     
   ],
 
   //indico modulos de los que dependo por ejemplo forms  
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
 
 // los provehedores de aquellas piezas que sean susceptibles debugger

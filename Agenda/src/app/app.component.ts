@@ -31,7 +31,11 @@ ngOnInit()
  this.contactos = this._contactosService.obteberContactos()
 }
 
-
+guardarContacto(contacto: string): void
+{
+  this._contactosService.agregarContacto(contacto);
+  this.contactos = this._contactosService.obteberContactos();
+}
 
   eliminarContacto(contacto: string):void{
     /* elimina lista de este componente

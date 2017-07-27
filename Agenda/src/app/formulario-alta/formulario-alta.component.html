@@ -1,0 +1,24 @@
+<!-- para trabajar con formulatio necesitamos usodirectica NgForm
+para obtener referencia a formGroupusamos  unra reference variable
+a la cual asignamos como valor la propia directiva NgForm
+  -->
+
+<form ngForm  #contacto="ngForm" (ngSubmit)="notificarContacto(contacto)">
+
+
+  <!-- Para tranajar con elementos de formularios necesitamos usar
+  la directiva ngModule mapa referencia a la instancia del "DormControl" del elemento
+  asignamos como referencia la vdirectiva ngmodel -->
+  <input 
+  type="text"
+  ngModel
+  name="nombre"
+  #nombreRef="ngModel"
+  
+  >
+
+
+<!--  -->
+  <button type="submit">Guardar contacto</button>
+
+</form>
