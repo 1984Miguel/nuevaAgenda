@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import {Contacto} from "./contactos"
 
 // un servicio es una clase decorada con @injectable
 // no necesita que le indiquemos ningun metadato
@@ -9,32 +9,32 @@ export class ContactosService {
 
 
 
-  private _contactos: string[];
+  private _contactos: Contacto[];
 
   constructor() {
 
   this._contactos = [
-    'Tim Cook',
-    'Bill Gates',
-    'Richard Stallman',
-    'Steve Wozniak'
+    new Contacto('Tim Cook'),
+    new Contacto('Bill Gates'),
+    new Contacto('Richard Stallman'),
+    new Contacto('Steve Wozniak')
    ];
   }
 
 
-obteberContactos(): string[]
+obteberContactos(): Contacto[]
 {
   return this._contactos;
 };
 
-agregarContacto(contacto: string)
+agregarContacto(contacto: Contacto)
 {
   this._contactos.push(contacto);
 }
 
-  eliminarContacto(contacto: string):void{
-    let posicion = this._contactos.indexOf(contacto);
-    this._contactos.splice(posicion, 1);
+  eliminarContacto(contacto: Contacto):void{
+   // let posicion = this._contactos.indexOf(contacto);
+   // this._contactos.splice(posicion, 1);
   }
 
 

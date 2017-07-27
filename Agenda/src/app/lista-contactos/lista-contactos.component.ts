@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Contacto} from "../contactos"
 
 @Component({
   selector: 'lista-contactos',
@@ -10,16 +11,16 @@ export class ListaContactosComponent implements OnInit {
 
 
   // podemos enlazar datos de un componente padre
-  @Input() datos: string[];
+  @Input() datos: Contacto[];
 
 
   //con output exponemos eventos a otros componentes
   // es necesario que sea EventEmiter<t>
 
-  @Output() clickEnEliminar = new EventEmitter<string>();
+  @Output() clickEnEliminar = new EventEmitter<Contacto>();
 
 // para emitir datos usamos la funcion emit del EventEmiter
-  notificarEliminacion(datoContacto: string):void{
+  notificarEliminacion(datoContacto: Contacto):void{
 
     //
     this.clickEnEliminar.emit(datoContacto)

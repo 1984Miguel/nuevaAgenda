@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormGroup} from '@angular/forms';
 
+import {Contacto} from '../contactos';
+
 @Component({
   selector: 'formulario-alta',
   templateUrl: './formulario-alta.component.html',
@@ -9,10 +11,20 @@ import {FormGroup} from '@angular/forms';
 export class FormularioAltaComponent {
 
   
-@Output() clikEnGuardar = new EventEmitter<string>();
+@Output() clikEnGuardar = new EventEmitter<Contacto>();
 
   notificarContacto(formulario: FormGroup): void{
-    this.clikEnGuardar.emit(formulario.value.nombre);
 
-  }
+
+let contacto = new Contacto(
+  formulario.value.nombre
+  ,formulario.value.apellido,
+  formulario.value.telefono,
+  formulario.value.correo )
+
+    this.clikEnGuardar.emit(contacto);
+   formulario.reset();
+
+//  }
+}
 }
