@@ -1,0 +1,22 @@
+<ul>
+
+  <!-- ngfor es una directiva que itera sobre una coleccion en cada iteracion
+  se referencia en la variable indicada el elemento iterador
+  esta directiva replica el elemento html en el que se usa
+   -->
+    <li *ngFor="let contacto of datos">
+      {{ contacto }}
+
+      <!-- para hacer suscripciones envolvemos con parentesis nombre del mismo 
+      debemos asociar un manejador  . Si queremos enacceder a los datos de un evento , 
+      tenemos que pasar como parametro el onjeto '$event'
+
+
+      En este caso pasamos el contacto y lo cremmos en el componente
+      -->
+      <button (click)="notificarEliminacion(contacto)" >Eliminar</button>
+    </li>
+
+
+
+</ul>

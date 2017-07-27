@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import{ContactosService} from "./contactos.service"
+
 @Component({
   // selecto elemento html donde se intanciara este componente
 
@@ -12,13 +14,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Mi aplicacion';
+  
+// queremos que lo pinte el hijo una coleccion de contactos
+  contactos: string[];
 
+// hago inyeccion de dependencias si o si
+// para hacerlo en constructor de la clase. tenemos que indicar un
+//  parametro con un modificador de acceso obligatorio
+// ademas debemos anotar su tipo que no es otro al servicio a inyectar
+constructor(private _contactosService: ContactosService){}
+
+
+// inializamos los datos que se crean al principio
 ngOnInit()
 {
-  //
-
-
-  console.log("hola")
+ this.contactos = this._contactosService.obteberContactos()
 }
+
+
+
+  eliminarContacto(contacto: string):void{
+    /* elimina lista de este componente
+    let posicion = this.contactos.indexOf(contacto);
+    this.contactos.splice(posicion, 1);
+    */
+
+    this._contactosService.eliminarContacto(contacto);
+    this.contactos = this._contactosService.obteberContactos();
+  }
 }
