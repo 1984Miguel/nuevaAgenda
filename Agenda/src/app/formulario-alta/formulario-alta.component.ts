@@ -15,13 +15,15 @@ export class FormularioAltaComponent {
 
   notificarContacto(formulario: FormGroup): void{
 
-
+/*
 let contacto = new Contacto(
-  formulario.value.nombre
-  ,formulario.value.apellido,
+  formulario.value.nombre,
+  formulario.value.apellido,
   formulario.value.telefono,
   formulario.value.correo )
+*/
 
+let contacto = Contacto.nuevodesdeJson(formulario.value)
     this.clikEnGuardar.emit(contacto);
    formulario.reset();
 

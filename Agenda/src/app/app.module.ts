@@ -1,6 +1,7 @@
 import { BrowserModule  } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {HttpModule} from "@angular/http"
 
 import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
@@ -22,7 +23,8 @@ import { FormularioAltaComponent } from './formulario-alta/formulario-alta.compo
   //indico modulos de los que dependo por ejemplo forms  
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
 
 // los provehedores de aquellas piezas que sean susceptibles debugger

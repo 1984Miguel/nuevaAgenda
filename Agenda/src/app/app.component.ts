@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs/Observable"
 
 import{ContactosService} from "./contactos.service"
 
@@ -18,7 +19,8 @@ import{Contacto} from "./contactos"
 export class AppComponent implements OnInit {
   
 // queremos que lo pinte el hijo una coleccion de contactos
-  contactos: Contacto[];
+  // contactos: Contacto[];
+  contactos$: Observable<Contacto[]>;
 
 // hago inyeccion de dependencias si o si
 // para hacerlo en constructor de la clase. tenemos que indicar un
@@ -30,13 +32,19 @@ constructor(private _contactosService: ContactosService){}
 // inializamos los datos que se crean al principio
 ngOnInit()
 {
- this.contactos = this._contactosService.obteberContactos()
+ this.contactos$ = this._contactosService
+                  .obteberContactos()
+               //  .subscribe(contactos: Contacto[])
 }
 
 guardarContacto(contacto: Contacto): void
 {
-  this._contactosService.agregarContacto(contacto);
-  this.contactos = this._contactosService.obteberContactos();
+  this._contactosService
+  .agregarContacto(contacto)
+  .subscribe(() =>{
+     this.contactos$ = this._contactosService.obteberContactos();
+  })
+
 }
 
   eliminarContacto(contacto: Contacto):void{
@@ -46,6 +54,6 @@ guardarContacto(contacto: Contacto): void
     */
 
     this._contactosService.eliminarContacto(contacto);
-    this.contactos = this._contactosService.obteberContactos();
+    this.contactos$ = this._contactosService.obteberContactos();
   }
 }

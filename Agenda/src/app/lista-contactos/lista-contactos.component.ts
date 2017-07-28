@@ -26,6 +26,10 @@ export class ListaContactosComponent implements OnInit {
     this.clickEnEliminar.emit(datoContacto)
   }
 
+  ObtenerNombre(dato: Contacto): string{
+    return `${dato.nombre} ${dato.apellido}`;
+  }
+
 
   constructor() { }
 

@@ -5,7 +5,7 @@
   esta directiva replica el elemento html en el que se usa
    -->
     <li *ngFor="let contacto of datos">
-      {{ contacto.nombre }}
+      {{ObtenerNombre(contacto)}}
 
       <!-- para hacer suscripciones envolvemos con parentesis nombre del mismo 
       debemos asociar un manejador  . Si queremos enacceder a los datos de un evento , 

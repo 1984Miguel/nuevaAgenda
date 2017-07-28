@@ -1,0 +1,31 @@
+{
+  "contactos": [
+    {
+      "nombre": "Richard",
+      "telefono": "132123423",
+      "correo": "rweqr@werwe.es",
+      "id": 1
+    },
+    {
+      "nombre": "pepe",
+      "apellido": "cadenas",
+      "telefono": "",
+      "correo": "",
+      "id": 2
+    },
+    {
+      "nombre": "Jose",
+      "apellido": "Perez",
+      "telefono": "45234",
+      "correo": "err@msae.io",
+      "id": 3
+    },
+    {
+      "nombre": "Luis",
+      "apellido": "Candelas",
+      "telefono": "3232",
+      "correo": "sdfds@dsfsd.es",
+      "id": 4
+    }
+  ]
+}
