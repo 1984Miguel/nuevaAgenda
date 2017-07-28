@@ -6,6 +6,8 @@ import {Http, Response} from "@angular/http"
 import {Observable} from "rxjs/Observable"
 import "rxjs/add/operator/map"
 
+import {environment} from "../environments/environment";
+
 
 // un servicio es una clase decorada con @injectable
 // no necesita que le indiquemos ningun metadato
@@ -36,7 +38,7 @@ obteberContactos(): Observable<Contacto[]>
   // es un operador de los objetos Observables Este operador tranforma un observable en otro
   // obs response -> obs contacto 
   return this._http
-  .get('http://localhost:3004/contactos')
+  .get(`${environment.apiUri}/contactos`)
   .map((respuesta : Response) =>{
         return Contacto.nuevaColeccionDesdeJson(respuesta.json());
 
@@ -61,7 +63,7 @@ agregarContacto(contacto: Contacto): Observable<Contacto>
 {
   //this._contactos.push(contacto);
   return this._http
-        .post('http://localhost:3004/contactos', contacto)
+        .post(`${environment.apiUri}/contactos`, contacto)
          .map((respuesta: Response) =>{
            return Contacto.nuevodesdeJson(respuesta.json())
          });
