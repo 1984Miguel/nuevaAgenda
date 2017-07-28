@@ -2,12 +2,15 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from "@angular/http"
+import {AppRoutingModule} from "./app-routing/app-routing.module"
 
 import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 
 import {ContactosService} from "./contactos.service";
-import { FormularioAltaComponent } from './formulario-alta/formulario-alta.component'
+import { FormularioAltaComponent } from './formulario-alta/formulario-alta.component';
+import { MisContactosComponent } from './mis-contactos/mis-contactos.component';
+import { NuevoContactoComponent } from './nuevo-contacto/nuevo-contacto.component'
 
 @NgModule({
 
@@ -16,7 +19,9 @@ import { FormularioAltaComponent } from './formulario-alta/formulario-alta.compo
   declarations: [
     AppComponent,
     ListaContactosComponent,
-    FormularioAltaComponent
+    FormularioAltaComponent,
+    MisContactosComponent,
+    NuevoContactoComponent
     
   ],
 
@@ -24,7 +29,8 @@ import { FormularioAltaComponent } from './formulario-alta/formulario-alta.compo
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
 
 // los provehedores de aquellas piezas que sean susceptibles debugger

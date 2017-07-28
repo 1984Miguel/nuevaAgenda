@@ -5,6 +5,23 @@
         <h1>Mi agenda</h1>  
     </header>
 
+    <!-- barra de navegacion -->
+
+    <nav>
+        <ul>    
+            <li> <a routerLink="./mis-contactos"> Mis Contactos  </a>  </li>
+
+            <li> <a routerLink="./nuevo-contacto"> Nuevo Contacto </a> </li>
+
+            
+
+        </ul>
+
+    </nav>
+
+        <!-- zona dinamica que cargamos diferentes secciones -->
+    <router-outlet> </router-outlet>
+
     <formulario-alta
     (clikEnGuardar)="guardarContacto($event)"
 
