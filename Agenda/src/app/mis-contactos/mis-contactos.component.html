@@ -1,3 +1,16 @@
-<p>
-  mis-contactos works!
-</p>
+ 
+  <!-- PAra enlazar datos en un componente hijo basta con indicar el atributo 
+    que se ha expuesto en este. si queremos evaliar una expresion previa a su
+    asignacion usamos usamos con corchetes el atributo -->
+
+    <!-- Cuando trabajamos con observables en los templates podemos ayudarnos de Pipe 'async
+    este Pipe lo que hace es gestionar suscripcion y desuscripcion del observable en cuestion 
+    
+    
+    -->
+ 
+ <lista-contactos [datos] ="contactos$ | async"
+    (clickEnEliminar)="eliminarContacto($event)" >
+
+
+    </lista-contactos>
